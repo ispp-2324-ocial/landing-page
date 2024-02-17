@@ -4,6 +4,8 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
+const base = "/landing-page"
+
 const menuitems = [
   {
     title: "Features",
@@ -16,25 +18,21 @@ const menuitems = [
     ],
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    title: "Para empresas",
+    path: base + "/enterprise",
   },
   {
-    title: "About",
-    path: "/about",
+    title: "Sobre nosotros",
+    path: base + "/about",
+  },
+  {
+    title: "Contacto",
+    path: base + "/contact",
+    badge: false,
   },
   {
     title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
+    path: base +"/blog",
   },
 ];
 ---
