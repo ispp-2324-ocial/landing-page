@@ -1,5 +1,4 @@
 ---
-import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
@@ -9,24 +8,24 @@ import { Icon } from "astro-icon";
 <Layout title="Contact">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contactanos</Fragment>
-      <Fragment slot="desc">Estamos aquí para ayudarte</Fragment>
+      <Fragment slot="title">Contáctanos</Fragment>
+      <Fragment slot="desc">Estamos aquí para ayudarte y resolver tus dudas</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-gray-800">Contacta con Ocial</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          ¿Tienes algo que comentarnos? Estamos aquí para ayudarte. Puedes rellenar el formulario, enviar un correo electrónico o llamar al siguiente número.
+          ¿Tienes algo que comentarnos? Estamos aquí para ayudarte. Puedes enviar un correo electrónico o llamar al siguiente número.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>Avenida de Reina Mercedes, CP 41012, Sevilla</span>
+            <span>Avenida de Reina Mercedes, s/n, CP 41012, Sevilla</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:ocial.es"
-              >ocial.es</a
+              href="mailto:contacto@ocial.es"
+              >contacto@ocial.es</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
@@ -34,9 +33,6 @@ import { Icon } from "astro-icon";
             >
           </div>
         </div>
-      </div>
-      <div>
-        <Contactform />
       </div>
     </div>
   </Container>
