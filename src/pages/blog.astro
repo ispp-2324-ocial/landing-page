@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
@@ -14,51 +14,75 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
+
+const images = import.meta.glob('/src/assets/blogIM/*.{jpeg,jpg,png,gif}');
+const postsEntry = publishedBlogEntries.map((blogPostEntry) => {
+  
+  console.log('Image data:', blogPostEntry.data.image);
+  const imagePath = `/src/assets/blogIM/${blogPostEntry.data.image.src}`;
+  console.log('Image path:', imagePath);
+  const imageSrc = images[imagePath];
+  console.log('Image src:', imageSrc);
+
+  return {
+    slug: blogPostEntry.slug,
+    body: blogPostEntry.body,
+    collection: blogPostEntry.collection,
+    title: blogPostEntry.data.title,
+    snippet: blogPostEntry.data.snippet,
+    image: {
+      src: images[`/src/assets/blogIM/${blogPostEntry.data.image.src}`](),
+      alt: blogPostEntry.data.image.alt,
+    },
+    author: blogPostEntry.data.author,
+    publishDate: blogPostEntry.data.publishDate,
+    category: blogPostEntry.data.category,
+    tags: blogPostEntry.data.tags,
+  };
+});
 ---
 
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">Blog Ocial</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        En esta sección actualizaremos las funcionalidades de nuestra aplicación y datos de interés.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          publishedBlogEntries.map((blogPostEntry, index) => (
+          postsEntry.map((blogPostEntry, index) => (
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
-                    src={blogPostEntry.data.image.src}
-                    alt={blogPostEntry.data.image.alt}
+                  <Image
+                    src={blogPostEntry.image.src}
+                    alt={blogPostEntry.image.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
                     width={800}
                     height={600}
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
                     class="w-full rounded-md object-cover object-center bg-white"
                   />
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.category}
+                      {blogPostEntry.category}
                     </span>
 
                     <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.title}
+                      {blogPostEntry.title}
                     </h2>
 
                     <div class="flex gap-2 mt-3">
                       <span class="text-gray-400">
-                        {blogPostEntry.data.author}
+                        {blogPostEntry.author}
                       </span>
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
+                        datetime={blogPostEntry.publishDate.toISOString()}>
+                        {blogPostEntry.publishDate.toDateString()}
                       </time>
                     </div>
                   </div>
