@@ -10,14 +10,8 @@ const base = "/landing-page"
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
+    title: "Inicio",
+    path: base,
   },
   {
     title: "Para empresas",
@@ -36,6 +30,16 @@ const menuitems = [
     title: "Blog",
     path: base +"/blog",
   },
+  {
+    title: "Despliegues",
+    path: base + "/deployments",
+    children: [
+      {
+        title: "S1",
+        path: "https://example.com",
+      },
+    ],
+  }
 ];
 ---
 
@@ -89,8 +93,8 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <a href="#">Inicia Sesión</a>
+        <Link href="#" size="md">Registrate</Link>
       </div>
     </div>
   </header>
