@@ -17,13 +17,6 @@ publishedBlogEntries.sort(function (a, b) {
 
 const images = import.meta.glob('/src/assets/blogIM/*.{jpeg,jpg,png,gif}');
 const postsEntry = publishedBlogEntries.map((blogPostEntry) => {
-  
-  console.log('Image data:', blogPostEntry.data.image);
-  const imagePath = `/src/assets/blogIM/${blogPostEntry.data.image.src}`;
-  console.log('Image path:', imagePath);
-  const imageSrc = images[imagePath];
-  console.log('Image src:', imageSrc);
-
   return {
     slug: blogPostEntry.slug,
     body: blogPostEntry.body,
@@ -53,9 +46,9 @@ const postsEntry = publishedBlogEntries.map((blogPostEntry) => {
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          postsEntry.map((blogPostEntry, index) => (
+          postsEntry.map((blogPostEntry) => (
             <li>
-              <a href={`/blog/${blogPostEntry.slug}`}>
+              <a href={`/landing-page/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Image
                     src={blogPostEntry.image.src}
