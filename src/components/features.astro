@@ -1,62 +1,73 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import outside from "assets/Mock_Up_Outside.png";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Vive momentos juntos",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Comparte eventos interesantes con amigos y organiza salidas en grupo para una experiencia aún más divertida.",
+    icon: "bx:bxs-group",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Descubre en el mapa",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Visualiza eventos en un mapa interactivo para encontrar actividades emocionantes en ubicaciones cercanas.",
+    icon: "bx:bxs-map",
   },
   {
-    title: "On-Demand Components",
+    title: "No te pierdas nada",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "Recibe notificaciones instantáneas sobre eventos cercanos, actualizaciones y nuevas actividades relevantes para ti.",
+    icon: "bx:bxs-bell",
   },
   {
-    title: "Broad Integration",
+    title: "Descubre a tu manera",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "Explora eventos adaptados a tus gustos e intereses con nuestro sistema de recomendaciones personalizadas.",
+    icon: "bx:bxs-search",
   },
   {
-    title: "SEO Enabled",
+    title: "Encuentra lo que amas",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+      "Filtra eventos por categorías, ubicación o fecha para descubrir exactamente lo que estás buscando.",
+    icon: "bx:bx-filter",
   },
   {
-    title: "Community",
+    title: "Navegación sin complicaciones",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Disfruta de una interfaz intuitiva que te permite explorar eventos de manera fácil y rápida.",
+    icon: "bx:bxs-layout",
   },
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
+<div class="grid mt-16 md:mt-0 lg:grid-cols-2">
+  <div class="pl-10">
+    <Image class="rounded-lg" src={outside} alt="Mock Up Outside" width="500"/>
+  </div>
+  <div class="mt-6">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Todos los eventos al alcance de tu mano
+    </h2>
+    <div>
+    <p class="text-lg mt-4 text-slate-600">
+      No importa a dónde te lleve la vida, <a class="text-ocial-blue">Ocial</a> estará contigo en cada paso del camino. Cuando estés de viaje, descubre eventos locales y sumérgete en la cultura de cada lugar. Desde festivales vibrantes hasta encuentros culturales, Ocial te conecta con las mejores experiencias, sin importar dónde te encuentres.
+    </p>
+  </div>
+</div>
+
+</div>
+
 </div>
 
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-ocial-dark-blue rounded-full  p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
