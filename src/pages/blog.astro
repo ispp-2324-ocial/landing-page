@@ -48,7 +48,7 @@ const postsEntry = publishedBlogEntries.map((blogPostEntry) => {
         {
           postsEntry.map((blogPostEntry) => (
             <li>
-              <a href={`/landing-page/blog/${blogPostEntry.slug}`}>
+              <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Image
                     src={blogPostEntry.image.src}
