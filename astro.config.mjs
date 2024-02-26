@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: 'https://ispp-2324-ocial.github.io',
-  base: '/landing-page',
+  site: 'https://ocial.es',
+  base: '/',
   integrations: [tailwind(), mdx(), sitemap()]
 })
