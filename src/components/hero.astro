@@ -1,16 +1,18 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
+import logoOcial from "assets/Logo_Ocial.png";
+import { Image } from "astro:assets";
+import mail from "assets/mail.svg"
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-6 md:order-1 hidden md:block center" style="width:85%">
     <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
+      src={logoOcial}
+      alt="Ocial Logo"
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
@@ -18,36 +20,22 @@ import { Icon } from "astro-icon";
     />
   </div>
   <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Ocio <a class="text-ocial-blue">local</a>, en <a class="text-ocial-blue">tiempo real</a>.
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
-      create any website with this starter.
+    <p class="text-lg mt-4 text-slate-600 max-w-xl mb-2">
+      Explora el pulso de tu comundiad con <a class="text-ocial-blue">Ocial</a>,
+      la aplicación que te conecta con eventos locales auténticos.
+      Desde mercadillos y conciertos íntimos hasta reuniones culturales y actividades deportivas.
+      <br><br>
+      ¡Descarga <a class="text-ocial-blue">Ocial</a> ahora y haz que cada día sea una nueva oportunidad para explorar!
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
+    <div class="flex -space-x-3">
+      <span class="w-full xl:w-2/3 2xl:w-1/2"> 
+        <input class="w-full bg-white pl-12 pr-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid mr-2 mb-2" type="email" placeholder="Introduce tu email">
+      </span>
+      <button class="bg-ocial-dark-blue px-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid text-white mr-2 mb-2">Enviar</button>
     </div>
+    <br>
   </div>
 </main>
