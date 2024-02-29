@@ -1,0 +1,32 @@
+{
+  "name": "Ocial's landing page",
+  "image": "node:20-slim",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [
+    4321
+  ],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": {
+    "npm": "npm ci --no-audit",
+    "no-yarn": "unset YARN_VERSION && rm -rf /opt/yarn*",
+    "use-bash": "rm -rf /bin/sh && ln -s /bin/bash /bin/sh",
+    "git-config": "git config --global core.editor 'code --wait'",
+    "git-template": "git config commit.template .gitmessage"
+  },
+  "postAttachCommand": "cat .vscode/extensions.json | jq -r .recommendations[] | xargs -n 1 code --install-extension",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  }
+}
