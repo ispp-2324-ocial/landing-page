@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Inauguramos la Landing Page de la organización."
+title: "Inauguramos la página principal de nuestra empresa."
 snippet: "La empresa inaugura la landing page y su blog en la que se publicarán todo tipo de funcionalidades que se implementen en la app."
 image: {
     src: "Ocial-6.png",
