@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import PricingCard from "@components/pricing.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 const features = [
   {
@@ -38,7 +38,7 @@ const pricing = [
       "Posiciona tu empresa en Ocial",
       "Soporte Comunitario",
       "",
-      ""
+      "",
     ],
     button: {
       text: "Crea una cuenta gratuita",
@@ -74,7 +74,7 @@ const pricing = [
       "Eventos destacados",
       "Envío de notificaciones",
       "Funciones de avanzadas",
-      "Soporte 24/7 prioritario"
+      "Soporte 24/7 prioritario",
     ],
     button: {
       text: "Comienza con AVANZADO",
@@ -87,44 +87,55 @@ const pricing = [
 <Layout title="Para empresas">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Amplifica la visibilidad de tus eventos con <a class="text-ocial-blue">Ocial</a>!</Fragment>
+      <Fragment slot="title"
+        >Amplifica la visibilidad de tus eventos con <a class="text-ocial-blue"
+          >Ocial</a
+        >!</Fragment
+      >
       <Fragment slot="desc">
-        La solución para la publicidad de tus eventos que se adapta a tu presupuesto.
+        La solución para la publicidad de tus eventos que se adapta a tu
+        presupuesto.
       </Fragment>
     </Sectionhead>
-    <br>
+    <br />
     <div class="mt-16 md:mt-0">
-        <h3 class="text-2xl lg:text-3xl font-bold lg:tracking-tight">
-          ¿Por qué elegir <a class="text-ocial-blue">Ocial</a>?
-        </h3>
-        <p class="text-lg mt-4 text-slate-600">
-            No pierdas tiempo complicándote con estrategias de marketing. Ocial es fácil de usar y te permite comenzar a promocionar tus eventos de inmediato, sin complicaciones ni demoras.
-        </p>
+      <h3 class="text-2xl lg:text-3xl font-bold lg:tracking-tight">
+        ¿Por qué elegir <a class="text-ocial-blue">Ocial</a>?
+      </h3>
+      <p class="text-lg mt-4 text-slate-600">
+        No pierdas tiempo complicándote con estrategias de marketing. Ocial es
+        fácil de usar y te permite comenzar a promocionar tus eventos de
+        inmediato, sin complicaciones ni demoras.
+      </p>
     </div>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-        {
-          features.map((item) => (
-            <div class="flex gap-4 items-start">
-              <div class="mt-1 bg-ocial-dark-blue rounded-full  p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name={item.icon} />
-              </div>
-              <div>
-                <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-                <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-              </div>
+      {
+        features.map((item) => (
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-ocial-dark-blue rounded-full  p-2 w-8 h-8 shrink-0">
+              <Icon class="text-white" name={item.icon} />
             </div>
-          ))
-        }
+            <div>
+              <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+              <p class="text-slate-500 mt-2 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
     </div>
-    <br>
+    <br />
     <div class="mt-16 md:mt-0">
-        <h3 class="text-2xl lg:text-3xl font-bold lg:tracking-tight">
-          ¡Empieza hoy!
-        </h3>
-        <p class="text-lg mt-4 text-slate-600">
-            Registrate y comienza a promocionar tus eventos de manera efectiva y sin complicaciones. ¡Potencia tu presencia local de manera sencilla y asequible!
-        </p>
+      <h3 class="text-2xl lg:text-3xl font-bold lg:tracking-tight">
+        ¡Empieza hoy!
+      </h3>
+      <p class="text-lg mt-4 text-slate-600">
+        Registrate y comienza a promocionar tus eventos de manera efectiva y sin
+        complicaciones. ¡Potencia tu presencia local de manera sencilla y
+        asequible!
+      </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}

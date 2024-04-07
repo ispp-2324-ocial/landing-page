@@ -1,10 +1,6 @@
 ---
 import { Picture } from "astro:assets";
 import logoOcial from "assets/Logo_Ocial.png";
-import { Image } from "astro:assets";
-import mail from "assets/mail.svg"
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
 ---
 
 <main
@@ -20,22 +16,34 @@ import { Icon } from "astro-icon";
     />
   </div>
   <div>
-    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Ocio <a class="text-ocial-blue">local</a>, en <a class="text-ocial-blue">tiempo real</a>.
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Ocio <a class="text-ocial-blue">local</a>, en <a class="text-ocial-blue"
+        >tiempo real</a
+      >.
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl mb-2">
       Explora el pulso de tu comundiad con <a class="text-ocial-blue">Ocial</a>,
-      la aplicación que te conecta con eventos locales auténticos.
-      Desde mercadillos y conciertos íntimos hasta reuniones culturales y actividades deportivas.
-      <br><br>
-      ¡Descarga <a class="text-ocial-blue">Ocial</a> ahora y haz que cada día sea una nueva oportunidad para explorar!
+      la aplicación que te conecta con eventos locales auténticos. Desde
+      mercadillos y conciertos íntimos hasta reuniones culturales y actividades
+      deportivas.
+      <br /><br />
+      ¡Descarga <a class="text-ocial-blue">Ocial</a> ahora y haz que cada día sea
+      una nueva oportunidad para explorar!
     </p>
     <div class="flex -space-x-3">
-      <span class="w-full xl:w-2/3 2xl:w-1/2"> 
-        <input class="w-full bg-white pl-12 pr-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid mr-2 mb-2" type="email" placeholder="Introduce tu email">
+      <span class="w-full xl:w-2/3 2xl:w-1/2">
+        <input
+          class="w-full bg-white pl-12 pr-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid mr-2 mb-2"
+          type="email"
+          placeholder="Introduce tu email"
+        />
       </span>
-      <button class="bg-ocial-dark-blue px-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid text-white mr-2 mb-2">Enviar</button>
+      <button
+        class="bg-ocial-dark-blue px-6 py-4 rounded-lg border-2 border-ocial-dark-blue border-solid text-white mr-2 mb-2"
+        >Enviar</button
+      >
     </div>
-    <br>
+    <br />
   </div>
 </main>
