@@ -6,33 +6,30 @@ import { Image } from "astro:assets";
 import logo from "../../assets/Texto_Ocial.png";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
-const base = ""
-
 const menuitems = [
   {
     title: "Inicio",
-    path: base,
+    path: "/",
   },
   {
     title: "Para empresas",
-    path: base + "/enterprise",
+    path: "/enterprise",
   },
   {
     title: "Sobre nosotros",
-    path: base + "/about",
+    path: "/about",
   },
   {
     title: "Contacto",
-    path: base + "/contact",
+    path: "/contact",
     badge: false,
   },
   {
     title: "Blog",
-    path: base +"/blog",
+    path: "/blog",
   },
   {
     title: "Despliegues",
-    path: base + "/deployments",
     children: [
       {
         title: "Sprint 2",
@@ -43,7 +40,7 @@ const menuitems = [
         path: "https://app.ocial.es/#/",
       },
     ],
-  }
+  },
 ];
 ---
 
