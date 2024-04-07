@@ -25,8 +25,10 @@
     "tailwindcss": "3.4.1"
   },
   "devDependencies": {
-    "husky": "9.0.11",
     "@commitlint/cli": "19.2.1",
-    "@commitlint/config-conventional": "19.1.0"
+    "@commitlint/config-conventional": "19.1.0",
+    "@iconify-json/bx": "^1.1.10",
+    "@iconify-json/uil": "^1.1.8",
+    "husky": "9.0.11"
   }
 }
