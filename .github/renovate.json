@@ -29,6 +29,9 @@
   "prHourlyLimit": 0,
   "transitiveRemediation": true,
   "osvVulnerabilityAlerts": true,
+  "baseBranches": [
+    "develop"
+  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "groupName": "vulnerable dependencies",
