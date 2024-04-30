@@ -4,12 +4,12 @@ title: "¡Nuevo mapa de OCIAL!"
 snippet: "La empresa inaugura el nuevo mapa de la aplicación en la que se ."
 image: {
     src: "map.png",
-    alt: "mapa"
+    alt: "mapa de eventos locales en tiempo real en sevilla en la app  de ocial."
 }
 publishDate: "2024-03-12 21:00"
 category: "Mapa"
 author: "Equipo de Ocial"
-tags: [webdev, tailwindcss, frontend, leaflet]
+tags: [ocio, tiempo real, mapa, eventos,sevilla , local]
 ---
 Descubre el Nuevo Mapa de Eventos de Ocial: ¡Explora tu Ciudad!
 
