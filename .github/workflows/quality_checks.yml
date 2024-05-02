@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           show-progress: false
 
       - name: Scan
-        uses: actions/dependency-review-action@v4.2.5
+        uses: actions/dependency-review-action@v4.3.2
         with:
           ## Workaround from https://github.com/actions/dependency-review-action/issues/456
           ## TODO: Remove when necessary
@@ -44,7 +44,7 @@ jobs:
           echo $PR_SHA > PR_sha
 
       - name: Upload PR number as artifact
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4.3.3
         with:
           compression-level: 0
           name: PR_context
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Checkout ⬇️
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           show-progress: false
 
@@ -73,7 +73,7 @@ jobs:
 
     steps:
       - name: Checkout ⬇️
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           show-progress: false
           fetch-depth: 0
